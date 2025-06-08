@@ -10,25 +10,55 @@
     body {
       background-color: #111827;
       color: #f9fafb;
+      direction: rtl;
+      text-align: right;
     }
     .accent {
       color: #ec4899;
     }
+    footer a {
+      font-size: 0.8rem;
+      color: #cbd5e1;
+    }
   </style>
 </head>
-<body class="min-h-screen p-6 text-center flex flex-col items-center justify-center space-y-8">
-  <h1 class="text-4xl font-bold accent">ShouldIBuyThat.net</h1>
-  <p class="text-lg max-w-md">تفكر في شراء شيء؟ إليك الإجابة الصادقة.</p>
-  <div id="answerBox" class="text-xl bg-gray-800 p-6 rounded shadow max-w-lg">لا. إذا كنت تسأل، فأنت لا تحتاجه.</div>
+<body class="min-h-screen p-6 flex flex-col items-center justify-center space-y-8">
+  <h1 class="text-4xl font-bold accent text-center">ShouldIBuyThat.net</h1>
+  <p class="text-lg max-w-md text-center">مش عارف تشتريه ولا لأ؟ خد إجابتك الصادقة هنا.</p>
+
+  <div id="answerBox" class="text-xl bg-gray-800 p-6 rounded shadow max-w-lg text-center">لا. أنت تملك خمسة منه بالفعل.</div>
   <button onclick="nextAnswer()" class="mt-4 px-4 py-2 bg-pink-600 rounded hover:bg-pink-500">اسأل مرة أخرى</button>
+
   <div class="flex justify-center gap-2 mt-10">
-    <a href="index_en.html" class="px-4 py-2 border rounded hover:bg-pink-700">English</a>
+    <a href="index.html" class="px-4 py-2 border rounded hover:bg-pink-700">English</a>
     <a href="index_de.html" class="px-4 py-2 border rounded hover:bg-pink-700">Deutsch</a>
     <a href="index_tr.html" class="px-4 py-2 border rounded hover:bg-pink-700">Türkçe</a>
     <a href="index_ar.html" class="px-4 py-2 border rounded hover:bg-pink-700">العربية</a>
   </div>
+
+  <footer class="mt-12 text-center">
+    <a href="impressum.html" class="hover:underline" target="_blank" rel="noopener noreferrer">Impressum</a> |
+    <a href="datenschutz.html" class="hover:underline" target="_blank" rel="noopener noreferrer">Datenschutz</a>
+  </footer>
+
   <script>
-    const answers = ['لا. إذا كنت تسأل، فأنت لا تحتاجه.', 'لا. محفظتك تبكي بالفعل.', 'لا. ليس عرضًا، بل فخ.', 'لا. ستنساه خلال يومين.', 'لا. لديك خمسة منه بالفعل.', 'لا. هذا ليس اهتمامًا بالنفس، بل تدمير ذاتي.', 'لا. لن يجعلك أكثر سعادة، بل أكثر فقرًا.', 'لا. بحثت عن فائدته؟ هذه هي الإجابة.', 'لا. ستستخدمه مرة واحدة وتندم للأبد.', 'لا. أضفه إلى مجموعتك الخيالية.', 'لا. أنت تشعر بالملل، ليس بحاجة.', 'لا. لا يمكنك تحمّل هذا النمط من الحياة... بعد.', 'لا. شراؤه لن يحل مشاكلك.', 'لا. يبدو أجمل على الإنترنت.', 'لا. كل شيئًا بدلاً من ذلك.'];
+    const answers = [
+      "لا. إذا كنت تحتاج أن تسأل، فأنت لا تحتاجه.",
+      "لا. محفظتك تبكي بالفعل.",
+      "لا. ليس تخفيض، بل فخ.",
+      "لا. ستنساه بعد يومين.",
+      "لا. تملكه بالفعل خمس مرات.",
+      "لا. هذا ليس اهتمامًا بالنفس، بل تدمير ذاتي.",
+      "لا. لن يسعدك، فقط سيفقرك.",
+      "لا. إذا بحثت عنه، فالإجابة لا.",
+      "لا. ستستخدمه مرة واحدة وتندم.",
+      "لا. أضفه لمجموعتك الخيالية.",
+      "لا. أنت تشعر بالملل، لست بحاجة إليه.",
+      "لا. لا يمكنك تحمل هذا النمط من الحياة… بعد.",
+      "لا. لن يحل الشراء مشاكلك.",
+      "لا. يبدو أجمل على الإنترنت.",
+      "لا. كل شيئ وتأكل أحسن."
+    ];
     function nextAnswer() {
       const randomIndex = Math.floor(Math.random() * answers.length);
       document.getElementById('answerBox').innerText = answers[randomIndex];
