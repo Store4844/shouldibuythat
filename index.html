@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,21 +14,49 @@
     .accent {
       color: #ec4899;
     }
+    footer a {
+      font-size: 0.8rem;
+      color: #cbd5e1;
+    }
   </style>
 </head>
 <body class="min-h-screen p-6 text-center flex flex-col items-center justify-center space-y-8">
   <h1 class="text-4xl font-bold accent">ShouldIBuyThat.net</h1>
-  <p class="text-lg max-w-md">Not sure if you should buy it? Get your honest answer below.</p>
-  <div id="answerBox" class="text-xl bg-gray-800 p-6 rounded shadow max-w-lg">No. If you had to ask, you probably don't need it.</div>
+  <p class="text-lg max-w-md">Not sure if you should buy it? Here’s your honest answer.</p>
+
+  <div id="answerBox" class="text-xl bg-gray-800 p-6 rounded shadow max-w-lg">No. You already own five of those.</div>
   <button onclick="nextAnswer()" class="mt-4 px-4 py-2 bg-pink-600 rounded hover:bg-pink-500">Ask again</button>
+
   <div class="flex justify-center gap-2 mt-10">
-    <a href="index_en.html" class="px-4 py-2 border rounded hover:bg-pink-700">English</a>
+    <a href="index.html" class="px-4 py-2 border rounded hover:bg-pink-700">English</a>
     <a href="index_de.html" class="px-4 py-2 border rounded hover:bg-pink-700">Deutsch</a>
     <a href="index_tr.html" class="px-4 py-2 border rounded hover:bg-pink-700">Türkçe</a>
     <a href="index_ar.html" class="px-4 py-2 border rounded hover:bg-pink-700">العربية</a>
   </div>
+
+  <footer class="mt-12 text-center">
+    <a href="impressum.html" class="hover:underline">Impressum</a> |
+    <a href="datenschutz.html" class="hover:underline">Datenschutz</a>
+  </footer>
+
   <script>
-    const answers = ["No. If you had to ask, you probably don't need it.", 'No. Your wallet is crying already.', 'No. It’s not on sale – it’s a trap.', 'No. You’ll forget about it in two days.', 'No. You own five of those already.', 'No. That’s not self-care, it’s self-sabotage.', 'No. It won’t make you happier, just poorer.', 'No. You googled what it does – that’s a sign.', 'No. You’ll use it once and regret it forever.', 'No. Add it to your imaginary collection.', 'No. You’re just bored, not in need.', "No. You can't afford that kind of lifestyle… yet.", 'No. Buying it won’t fix your life.', 'No. It looks better online than in your apartment.', 'No. Eat something instead.'];
+    const answers = [
+      "No. If you had to ask, you probably don't need it.",
+      "No. Your wallet is crying already.",
+      "No. It’s not on sale – it’s a trap.",
+      "No. You’ll forget about it in two days.",
+      "No. You own five of those already.",
+      "No. That’s not self-care, it’s self-sabotage.",
+      "No. It won’t make you happier, just poorer.",
+      "No. You googled what it does – that’s a sign.",
+      "No. You’ll use it once and regret it forever.",
+      "No. Add it to your imaginary collection.",
+      "No. You’re just bored, not in need.",
+      "No. You can't afford that kind of lifestyle… yet.",
+      "No. Buying it won’t fix your life.",
+      "No. It looks better online than in your apartment.",
+      "No. Eat something instead."
+    ];
     function nextAnswer() {
       const randomIndex = Math.floor(Math.random() * answers.length);
       document.getElementById('answerBox').innerText = answers[randomIndex];
