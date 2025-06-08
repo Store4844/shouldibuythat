@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShouldIBuyThat.net</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-color: #111827;
+      color: #f9fafb;
+    }
+    .accent {
+      color: #ec4899;
+    }
+  </style>
+</head>
+<body class="min-h-screen p-6 text-center flex flex-col items-center justify-center space-y-8">
+  <h1 class="text-4xl font-bold accent">ShouldIBuyThat.net</h1>
+  <p class="text-lg max-w-md">Du überlegst, etwas zu kaufen? Hier kommt deine ehrliche Antwort.</p>
+  <div id="answerBox" class="text-xl bg-gray-800 p-6 rounded shadow max-w-lg">Nein. Wenn du fragen musst, brauchst du es nicht.</div>
+  <button onclick="nextAnswer()" class="mt-4 px-4 py-2 bg-pink-600 rounded hover:bg-pink-500">Noch mal fragen</button>
+  <div class="flex justify-center gap-2 mt-10">
+    <a href="index_en.html" class="px-4 py-2 border rounded hover:bg-pink-700">English</a>
+    <a href="index_de.html" class="px-4 py-2 border rounded hover:bg-pink-700">Deutsch</a>
+    <a href="index_tr.html" class="px-4 py-2 border rounded hover:bg-pink-700">Türkçe</a>
+    <a href="index_ar.html" class="px-4 py-2 border rounded hover:bg-pink-700">العربية</a>
+  </div>
+  <script>
+    const answers = ['Nein. Wenn du fragen musst, brauchst du es nicht.', 'Nein. Dein Geldbeutel weint schon.', 'Nein. Kein Angebot, nur eine Falle.', 'Nein. In zwei Tagen hast du’s vergessen.', 'Nein. Du hast sowas schon fünfmal.', 'Nein. Das ist keine Selbstfürsorge – das ist Selbstsabotage.', 'Nein. Das macht dich nicht glücklicher, nur ärmer.', 'Nein. Wenn du googeln musst, was es macht – nein.', 'Nein. Einmal benutzt, ewig bereut.', 'Nein. Pack’s zur Fantasiesammlung.', 'Nein. Du bist gelangweilt, nicht bedürftig.', 'Nein. Du kannst dir diesen Lifestyle (noch) nicht leisten.', 'Nein. Der Kauf löst keine Probleme.', 'Nein. Sieht online besser aus als bei dir zuhause.', 'Nein. Iss lieber was.'];
+    function nextAnswer() {
+      const randomIndex = Math.floor(Math.random() * answers.length);
+      document.getElementById('answerBox').innerText = answers[randomIndex];
+    }
+  </script>
+</body>
+</html>

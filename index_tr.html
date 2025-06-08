@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="tr" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShouldIBuyThat.net</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-color: #111827;
+      color: #f9fafb;
+    }
+    .accent {
+      color: #ec4899;
+    }
+  </style>
+</head>
+<body class="min-h-screen p-6 text-center flex flex-col items-center justify-center space-y-8">
+  <h1 class="text-4xl font-bold accent">ShouldIBuyThat.net</h1>
+  <p class="text-lg max-w-md">Bir şey almalı mıyım diye mi düşünüyorsun? Cevabın burada.</p>
+  <div id="answerBox" class="text-xl bg-gray-800 p-6 rounded shadow max-w-lg">Hayır. Sormak zorunda kaldıysan, muhtemelen ihtiyacın yok.</div>
+  <button onclick="nextAnswer()" class="mt-4 px-4 py-2 bg-pink-600 rounded hover:bg-pink-500">Tekrar sor</button>
+  <div class="flex justify-center gap-2 mt-10">
+    <a href="index_en.html" class="px-4 py-2 border rounded hover:bg-pink-700">English</a>
+    <a href="index_de.html" class="px-4 py-2 border rounded hover:bg-pink-700">Deutsch</a>
+    <a href="index_tr.html" class="px-4 py-2 border rounded hover:bg-pink-700">Türkçe</a>
+    <a href="index_ar.html" class="px-4 py-2 border rounded hover:bg-pink-700">العربية</a>
+  </div>
+  <script>
+    const answers = ['Hayır. Sormak zorunda kaldıysan, muhtemelen ihtiyacın yok.', 'Hayır. Cüzdanın zaten ağlıyor.', 'Hayır. Bu bir indirim değil, tuzak.', 'Hayır. İki güne unutursun.', 'Hayır. Zaten beş tane var.', 'Hayır. Bu özbakım değil, öz-sabotaj.', 'Hayır. Seni mutlu etmeyecek, sadece fakirleştirecek.', 'Hayır. Ne işe yaradığını arattın – işte cevap.', 'Hayır. Bir kez kullanıp sonsuza dek pişman olacaksın.', 'Hayır. Hayali koleksiyonuna ekle.', 'Hayır. Sadece sıkıldın, ihtiyacın yok.', 'Hayır. Bu yaşam tarzını karşılayamazsın… henüz.', 'Hayır. Satın almak hayatını düzeltmez.', 'Hayır. Online’da daha iyi görünüyor.', 'Hayır. Bunun yerine bir şeyler ye.'];
+    function nextAnswer() {
+      const randomIndex = Math.floor(Math.random() * answers.length);
+      document.getElementById('answerBox').innerText = answers[randomIndex];
+    }
+  </script>
+</body>
+</html>
